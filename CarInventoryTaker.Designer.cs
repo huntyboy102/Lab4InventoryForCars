@@ -30,21 +30,21 @@ namespace Lab4InventoryForCars
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("New");
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("ID");
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Make");
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("Model");
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("Year");
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("Price");
+            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem("New");
+            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem("ID");
+            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem("Make");
+            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem("Model");
+            System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem("Year");
+            System.Windows.Forms.ListViewItem listViewItem18 = new System.Windows.Forms.ListViewItem("Price");
             this.labelMake = new System.Windows.Forms.Label();
             this.labelModel = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.comboBoxCarMake = new System.Windows.Forms.ComboBox();
+            this.comboBoxMake = new System.Windows.Forms.ComboBox();
             this.labelYear = new System.Windows.Forms.Label();
             this.labelPrice = new System.Windows.Forms.Label();
             this.labelNew = new System.Windows.Forms.Label();
-            this.textBoxCarModel = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.textBoxModel = new System.Windows.Forms.TextBox();
+            this.checkBoxNewStatus = new System.Windows.Forms.CheckBox();
             this.textBoxPrice = new System.Windows.Forms.TextBox();
             this.listViewCarDetails = new System.Windows.Forms.ListView();
             this.textBoxResults = new System.Windows.Forms.TextBox();
@@ -73,14 +73,14 @@ namespace Lab4InventoryForCars
             this.labelModel.TabIndex = 2;
             this.labelModel.Text = "M&odel:";
             // 
-            // comboBoxCarMake
+            // comboBoxMake
             // 
-            this.comboBoxCarMake.FormattingEnabled = true;
-            this.comboBoxCarMake.Location = new System.Drawing.Point(107, 9);
-            this.comboBoxCarMake.Name = "comboBoxCarMake";
-            this.comboBoxCarMake.Size = new System.Drawing.Size(121, 23);
-            this.comboBoxCarMake.TabIndex = 1;
-            this.toolTip1.SetToolTip(this.comboBoxCarMake, "The ComboBox used to select the make of the car");
+            this.comboBoxMake.FormattingEnabled = true;
+            this.comboBoxMake.Location = new System.Drawing.Point(107, 9);
+            this.comboBoxMake.Name = "comboBoxMake";
+            this.comboBoxMake.Size = new System.Drawing.Size(121, 23);
+            this.comboBoxMake.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.comboBoxMake, "The ComboBox used to select the make of the car");
             // 
             // labelYear
             // 
@@ -103,27 +103,27 @@ namespace Lab4InventoryForCars
             // labelNew
             // 
             this.labelNew.AutoSize = true;
-            this.labelNew.Location = new System.Drawing.Point(57, 143);
+            this.labelNew.Location = new System.Drawing.Point(57, 132);
             this.labelNew.Name = "labelNew";
             this.labelNew.Size = new System.Drawing.Size(34, 15);
             this.labelNew.TabIndex = 8;
             this.labelNew.Text = "&New:";
             // 
-            // textBoxCarModel
+            // textBoxModel
             // 
-            this.textBoxCarModel.Location = new System.Drawing.Point(107, 40);
-            this.textBoxCarModel.Name = "textBoxCarModel";
-            this.textBoxCarModel.Size = new System.Drawing.Size(121, 23);
-            this.textBoxCarModel.TabIndex = 3;
+            this.textBoxModel.Location = new System.Drawing.Point(107, 40);
+            this.textBoxModel.Name = "textBoxModel";
+            this.textBoxModel.Size = new System.Drawing.Size(121, 23);
+            this.textBoxModel.TabIndex = 3;
             // 
-            // checkBox1
+            // checkBoxNewStatus
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(107, 144);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 9;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxNewStatus.AutoSize = true;
+            this.checkBoxNewStatus.Location = new System.Drawing.Point(107, 133);
+            this.checkBoxNewStatus.Name = "checkBoxNewStatus";
+            this.checkBoxNewStatus.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxNewStatus.TabIndex = 9;
+            this.checkBoxNewStatus.UseVisualStyleBackColor = true;
             // 
             // textBoxPrice
             // 
@@ -135,20 +135,20 @@ namespace Lab4InventoryForCars
             // listViewCarDetails
             // 
             this.listViewCarDetails.HideSelection = false;
-            listViewItem1.ToolTipText = "A check box to show if the car is new.";
-            listViewItem2.IndentCount = 1;
-            listViewItem2.ToolTipText = "The identification number of the car.";
-            listViewItem3.ToolTipText = "The make of the car.";
-            listViewItem4.ToolTipText = "The model of the car.";
-            listViewItem5.ToolTipText = "The year of the car.";
-            listViewItem6.ToolTipText = "The price of the car.";
+            listViewItem13.ToolTipText = "A check box to show if the car is new.";
+            listViewItem14.IndentCount = 1;
+            listViewItem14.ToolTipText = "The identification number of the car.";
+            listViewItem15.ToolTipText = "The make of the car.";
+            listViewItem16.ToolTipText = "The model of the car.";
+            listViewItem17.ToolTipText = "The year of the car.";
+            listViewItem18.ToolTipText = "The price of the car.";
             this.listViewCarDetails.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3,
-            listViewItem4,
-            listViewItem5,
-            listViewItem6});
+            listViewItem13,
+            listViewItem14,
+            listViewItem15,
+            listViewItem16,
+            listViewItem17,
+            listViewItem18});
             this.listViewCarDetails.Location = new System.Drawing.Point(3, 171);
             this.listViewCarDetails.Name = "listViewCarDetails";
             this.listViewCarDetails.Size = new System.Drawing.Size(430, 186);
@@ -192,13 +192,30 @@ namespace Lab4InventoryForCars
             this.buttonEnter.TabIndex = 10;
             this.buttonEnter.Text = "&Enter";
             this.buttonEnter.UseVisualStyleBackColor = true;
+            this.buttonEnter.Click += new System.EventHandler(this.buttonEnterClick);
             // 
             // numericUpDownYear
             // 
             this.numericUpDownYear.Location = new System.Drawing.Point(108, 69);
+            this.numericUpDownYear.Maximum = new decimal(new int[] {
+            2021,
+            0,
+            0,
+            0});
+            this.numericUpDownYear.Minimum = new decimal(new int[] {
+            1921,
+            0,
+            0,
+            0});
             this.numericUpDownYear.Name = "numericUpDownYear";
+            this.numericUpDownYear.ReadOnly = true;
             this.numericUpDownYear.Size = new System.Drawing.Size(120, 23);
             this.numericUpDownYear.TabIndex = 5;
+            this.numericUpDownYear.Value = new decimal(new int[] {
+            1921,
+            0,
+            0,
+            0});
             // 
             // FormCarInventory
             // 
@@ -214,12 +231,12 @@ namespace Lab4InventoryForCars
             this.Controls.Add(this.textBoxResults);
             this.Controls.Add(this.listViewCarDetails);
             this.Controls.Add(this.textBoxPrice);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.textBoxCarModel);
+            this.Controls.Add(this.checkBoxNewStatus);
+            this.Controls.Add(this.textBoxModel);
             this.Controls.Add(this.labelNew);
             this.Controls.Add(this.labelPrice);
             this.Controls.Add(this.labelYear);
-            this.Controls.Add(this.comboBoxCarMake);
+            this.Controls.Add(this.comboBoxMake);
             this.Controls.Add(this.labelModel);
             this.Controls.Add(this.labelMake);
             this.Name = "FormCarInventory";
@@ -235,12 +252,12 @@ namespace Lab4InventoryForCars
         private System.Windows.Forms.Label labelMake;
         private System.Windows.Forms.Label labelModel;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.ComboBox comboBoxCarMake;
+        private System.Windows.Forms.ComboBox comboBoxMake;
         private System.Windows.Forms.Label labelYear;
         private System.Windows.Forms.Label labelPrice;
         private System.Windows.Forms.Label labelNew;
-        private System.Windows.Forms.TextBox textBoxCarModel;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox textBoxModel;
+        private System.Windows.Forms.CheckBox checkBoxNewStatus;
         private System.Windows.Forms.TextBox textBoxPrice;
         private System.Windows.Forms.ListView listViewCarDetails;
         private System.Windows.Forms.TextBox textBoxResults;

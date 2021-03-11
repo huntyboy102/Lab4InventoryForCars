@@ -17,11 +17,30 @@ namespace Lab4InventoryForCars
             InitializeComponent();
         }
 
-
-
         private void buttonExitClick(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void buttonEnterClick(object sender, EventArgs e)
+        {
+            textBoxResults.Text = String.Empty;
+
+            if (IsCarValid(comboBoxMake.Text, textBoxModel.Text, numericUpDownYear.Value, textBoxPrice.Text))
+            {
+                Car newCarToAdd = new Car(comboBoxMake.Text, textBoxModel.Text, numericUpDownYear.Value, textBoxPrice.Text, checkBoxNewStatus.Checked);
+
+                if (selectedIndex >= 0)
+                {
+                    carList[selectedIndex] = newCarToAdd;
+                }
+                else
+                {
+                    carList.Add(newCarToAdd);
+                }
+                PopulateListView(carList);
+                SetDefaults();
+            }
         }
     }
 }
