@@ -30,12 +30,12 @@ namespace Lab4InventoryForCars
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem("New");
-            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem("ID");
-            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem("Make");
-            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem("Model");
-            System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem("Year");
-            System.Windows.Forms.ListViewItem listViewItem18 = new System.Windows.Forms.ListViewItem("Price");
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("New");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("ID");
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Make");
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("Model");
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("Year");
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("Price");
             this.labelMake = new System.Windows.Forms.Label();
             this.labelModel = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -135,20 +135,20 @@ namespace Lab4InventoryForCars
             // listViewCarDetails
             // 
             this.listViewCarDetails.HideSelection = false;
-            listViewItem13.ToolTipText = "A check box to show if the car is new.";
-            listViewItem14.IndentCount = 1;
-            listViewItem14.ToolTipText = "The identification number of the car.";
-            listViewItem15.ToolTipText = "The make of the car.";
-            listViewItem16.ToolTipText = "The model of the car.";
-            listViewItem17.ToolTipText = "The year of the car.";
-            listViewItem18.ToolTipText = "The price of the car.";
+            listViewItem1.ToolTipText = "A check box to show if the car is new.";
+            listViewItem2.IndentCount = 1;
+            listViewItem2.ToolTipText = "The identification number of the car.";
+            listViewItem3.ToolTipText = "The make of the car.";
+            listViewItem4.ToolTipText = "The model of the car.";
+            listViewItem5.ToolTipText = "The year of the car.";
+            listViewItem6.ToolTipText = "The price of the car.";
             this.listViewCarDetails.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem13,
-            listViewItem14,
-            listViewItem15,
-            listViewItem16,
-            listViewItem17,
-            listViewItem18});
+            listViewItem1,
+            listViewItem2,
+            listViewItem3,
+            listViewItem4,
+            listViewItem5,
+            listViewItem6});
             this.listViewCarDetails.Location = new System.Drawing.Point(3, 171);
             this.listViewCarDetails.Name = "listViewCarDetails";
             this.listViewCarDetails.Size = new System.Drawing.Size(430, 186);
@@ -212,7 +212,7 @@ namespace Lab4InventoryForCars
             this.numericUpDownYear.Size = new System.Drawing.Size(120, 23);
             this.numericUpDownYear.TabIndex = 5;
             this.numericUpDownYear.Value = new decimal(new int[] {
-            1921,
+            2021,
             0,
             0,
             0});
