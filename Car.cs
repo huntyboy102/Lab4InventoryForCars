@@ -20,12 +20,23 @@
         // A private bool that checks if the car is new.
         private bool carNewStatus = false;
 
+        /// <summary>
+        /// Constructor - Default - Creates a new car object.
+        /// </summary>
         public Car()
         {
             carCount += 1;
             carIdNumber = carCount;
         }
 
+        /// <summary>
+        /// Constructor - Parameterized - Creates a new car object.
+        /// </summary>
+        /// <param name="make"></param>
+        /// <param name="model"></param>
+        /// <param name="year"></param>
+        /// <param name="price"></param>
+        /// <param name="newStatus"></param>
         public Car(string make, string model, int year, decimal price, bool newStatus) : this()
         {
             carMake = make;
@@ -35,6 +46,9 @@
             carNewStatus = newStatus;
         }
 
+        /// <summary>
+        /// Count ReadOnly Property - Gets the number of cars that have been entered into the listview.
+        /// </summary>
         public int Count
         {
             get
@@ -43,6 +57,9 @@
             }
         }
 
+        /// <summary>
+        /// IdentificationNumber ReadOnly Property - Gets the cars Identification number.
+        /// </summary>
         public int Id
         {
             get
@@ -51,6 +68,9 @@
             }
         }
 
+        /// <summary>
+        /// NewStatus Property - Gets and sets the status of the car.
+        /// </summary>
         public bool NewStatus
         {
             get
@@ -59,11 +79,13 @@
             }
             set
             {
-                // The value passed in is always called "value" by default.
                 carNewStatus = value;
             }
         }
 
+        /// <summary>
+        /// Make Property - Gets and Sets the model of the car.
+        /// </summary>
         public string Make
         {
             get
@@ -72,11 +94,13 @@
             }
             set
             {
-                // The value passed in is always called "value" by default - regardless of the data type.
                 carMake = value;
             }
         }
 
+        /// <summary>
+        /// Model Property - Gets and Sets the model of the car.
+        /// </summary>
         public string Model
         {
             get
@@ -85,11 +109,13 @@
             }
             set
             {
-                // The value passed in is always called "value" by default - regardless of the data type.
                 carModel = value;
             }
         }
 
+        /// <summary>
+        /// Year Property - Gets and Sets the year of the car.
+        /// </summary>
         public int Year
         {
             get
@@ -102,6 +128,9 @@
             }
         }
 
+        /// <summary>
+        /// Price Property - Gets and Sets the price of the car.
+        /// </summary>
         public decimal Price
         {
             get
@@ -114,6 +143,10 @@
             }
         }
 
+        /// <summary>
+        /// GetCarData is a function that gets all entered car data from the class scope.
+        /// </summary>
+        /// <returns></returns>
         public string GetCarData()
         {
             return "This is a " + carMake + " " + carModel + " from the year " + carYear +
