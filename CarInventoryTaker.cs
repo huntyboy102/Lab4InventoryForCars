@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Lab4InventoryForCars
@@ -16,23 +10,20 @@ namespace Lab4InventoryForCars
         private int selectedIndex = -1;
         private bool isAutomated = false;
 
+
         public FormCarInventory()
         {
             InitializeComponent();
-        }
-
-        private void buttonExitClick(object sender, EventArgs e)
-        {
-            Close();
         }
 
         private void buttonEnterClick(object sender, EventArgs e)
         {
             textBoxResults.Text = String.Empty;
 
-            if (IsCarValid(comboBoxMake.Text, textBoxModel.Text, numericUpDownYear.Value, textBoxPrice.Text))
+            if (IsCarValid())
             {
-                Car newCarToAdd = new Car(comboBoxMake.Text, textBoxModel.Text, numericUpDownYear.Value, textBoxPrice.Text, checkBoxNewStatus.Checked);
+                Car newCarToAdd = new Car(comboBoxMake.Text, textBoxModel.Text, Convert.ToInt32(numericUpDownYear.Value),
+                    Convert.ToDecimal(textBoxPrice.Text), checkBoxNewStatus.Checked);
 
                 if (selectedIndex >= 0)
                 {
@@ -43,7 +34,34 @@ namespace Lab4InventoryForCars
                     carList.Add(newCarToAdd);
                 }
                 PopulateListView(carList);
-                SetDefaults();
+            }
+        }
+
+        private void buttonResetClick(object sender, EventArgs e)
+        {
+            SetDefaults();
+        }
+
+        private void buttonExitClick(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void CarSelected(object sender, EventArgs e)
+        {
+            if (listViewCarDetails.Items.Count > 0 && listViewCarDetails.FocusedItem != null)
+            {
+                comboBoxMake.Text = listViewCarDetails.FocusedItem.SubItems[2].Text;
+                textBoxModel.Text = listViewCarDetails.FocusedItem.SubItems[3].Text;
+                numericUpDownYear.Value = Convert.ToDecimal(listViewCarDetails.FocusedItem.SubItems[4].Text);
+                textBoxPrice.Text = listViewCarDetails.FocusedItem.SubItems[5].Text;
+                checkBoxNewStatus.Checked = listViewCarDetails.FocusedItem.Checked;
+
+                selectedIndex = listViewCarDetails.FocusedItem.Index;
+            }
+            else
+            {
+                selectedIndex = -1;
             }
         }
 
@@ -79,15 +97,37 @@ namespace Lab4InventoryForCars
             {
                 ListViewItem carItem = new ListViewItem();
 
-                carItem.SubItems.Add(newCar.make);
+                isAutomated = true;
+                carItem.Checked = newCar.NewStatus;
+
+                carItem.SubItems.Add(Convert.ToString(newCar.Id));
+                carItem.SubItems.Add(newCar.Make);
+                carItem.SubItems.Add(newCar.Model);
+                carItem.SubItems.Add(Convert.ToString(newCar.Year));
+                carItem.SubItems.Add(Convert.ToString(newCar.Price));
+
+                listViewCarDetails.Items.Add(carItem);
+
+                isAutomated = false;
             }
         }
 
-        private bool IsCarValid(string make, string model, int year, decimal price, bool newStatus)
+        private bool IsCarValid()
         {
             bool isValid = true;
 
-            if (make ==)
+            if (textBoxModel.Text == string.Empty)
+            {
+                isValid &= false;
+                textBoxResults.Text = "Please enter a car model.\n";
+            }
+            if (comboBoxMake.Text == string.Empty)
+            {
+                isValid &= false;
+                textBoxResults.Text = "Please select a brand of car.\n";
+            }
+
+            return isValid;
         }
     }
 }

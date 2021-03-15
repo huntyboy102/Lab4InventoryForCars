@@ -40,17 +40,17 @@ namespace Lab4InventoryForCars
             this.labelModel = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.comboBoxMake = new System.Windows.Forms.ComboBox();
+            this.buttonExit = new System.Windows.Forms.Button();
+            this.buttonReset = new System.Windows.Forms.Button();
+            this.buttonEnter = new System.Windows.Forms.Button();
+            this.textBoxPrice = new System.Windows.Forms.TextBox();
             this.labelYear = new System.Windows.Forms.Label();
             this.labelPrice = new System.Windows.Forms.Label();
             this.labelNew = new System.Windows.Forms.Label();
             this.textBoxModel = new System.Windows.Forms.TextBox();
             this.checkBoxNewStatus = new System.Windows.Forms.CheckBox();
-            this.textBoxPrice = new System.Windows.Forms.TextBox();
             this.listViewCarDetails = new System.Windows.Forms.ListView();
             this.textBoxResults = new System.Windows.Forms.TextBox();
-            this.buttonExit = new System.Windows.Forms.Button();
-            this.buttonReset = new System.Windows.Forms.Button();
-            this.buttonEnter = new System.Windows.Forms.Button();
             this.numericUpDownYear = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownYear)).BeginInit();
             this.SuspendLayout();
@@ -75,12 +75,62 @@ namespace Lab4InventoryForCars
             // 
             // comboBoxMake
             // 
+            this.comboBoxMake.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMake.FormattingEnabled = true;
+            this.comboBoxMake.Items.AddRange(new object[] {
+            "Tesla",
+            "Honda",
+            "Subaru",
+            "Ford",
+            "Mazda",
+            "Nissan",
+            "Toyota"});
             this.comboBoxMake.Location = new System.Drawing.Point(107, 9);
             this.comboBoxMake.Name = "comboBoxMake";
             this.comboBoxMake.Size = new System.Drawing.Size(121, 23);
             this.comboBoxMake.TabIndex = 1;
             this.toolTip1.SetToolTip(this.comboBoxMake, "The ComboBox used to select the make of the car");
+            // 
+            // buttonExit
+            // 
+            this.buttonExit.Location = new System.Drawing.Point(358, 503);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(75, 23);
+            this.buttonExit.TabIndex = 12;
+            this.buttonExit.Text = "E&xit";
+            this.toolTip1.SetToolTip(this.buttonExit, "Closes the program");
+            this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExitClick);
+            // 
+            // buttonReset
+            // 
+            this.buttonReset.Location = new System.Drawing.Point(277, 503);
+            this.buttonReset.Name = "buttonReset";
+            this.buttonReset.Size = new System.Drawing.Size(75, 23);
+            this.buttonReset.TabIndex = 11;
+            this.buttonReset.Text = "&Reset";
+            this.toolTip1.SetToolTip(this.buttonReset, "Resets the program");
+            this.buttonReset.UseVisualStyleBackColor = true;
+            this.buttonReset.Click += new System.EventHandler(this.buttonResetClick);
+            // 
+            // buttonEnter
+            // 
+            this.buttonEnter.Location = new System.Drawing.Point(196, 503);
+            this.buttonEnter.Name = "buttonEnter";
+            this.buttonEnter.Size = new System.Drawing.Size(75, 23);
+            this.buttonEnter.TabIndex = 10;
+            this.buttonEnter.Text = "&Enter";
+            this.toolTip1.SetToolTip(this.buttonEnter, "Adds car to list viewer");
+            this.buttonEnter.UseVisualStyleBackColor = true;
+            this.buttonEnter.Click += new System.EventHandler(this.buttonEnterClick);
+            // 
+            // textBoxPrice
+            // 
+            this.textBoxPrice.Location = new System.Drawing.Point(107, 100);
+            this.textBoxPrice.Name = "textBoxPrice";
+            this.textBoxPrice.Size = new System.Drawing.Size(121, 23);
+            this.textBoxPrice.TabIndex = 7;
+            this.toolTip1.SetToolTip(this.textBoxPrice, "The price of the car");
             // 
             // labelYear
             // 
@@ -121,19 +171,14 @@ namespace Lab4InventoryForCars
             this.checkBoxNewStatus.AutoSize = true;
             this.checkBoxNewStatus.Location = new System.Drawing.Point(107, 133);
             this.checkBoxNewStatus.Name = "checkBoxNewStatus";
-            this.checkBoxNewStatus.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxNewStatus.Size = new System.Drawing.Size(103, 19);
             this.checkBoxNewStatus.TabIndex = 9;
+            this.checkBoxNewStatus.Text = "Is the car new?";
             this.checkBoxNewStatus.UseVisualStyleBackColor = true;
-            // 
-            // textBoxPrice
-            // 
-            this.textBoxPrice.Location = new System.Drawing.Point(107, 100);
-            this.textBoxPrice.Name = "textBoxPrice";
-            this.textBoxPrice.Size = new System.Drawing.Size(121, 23);
-            this.textBoxPrice.TabIndex = 7;
             // 
             // listViewCarDetails
             // 
+            this.listViewCarDetails.FullRowSelect = true;
             this.listViewCarDetails.HideSelection = false;
             listViewItem1.ToolTipText = "A check box to show if the car is new.";
             listViewItem2.IndentCount = 1;
@@ -150,9 +195,11 @@ namespace Lab4InventoryForCars
             listViewItem5,
             listViewItem6});
             this.listViewCarDetails.Location = new System.Drawing.Point(3, 171);
+            this.listViewCarDetails.MultiSelect = false;
             this.listViewCarDetails.Name = "listViewCarDetails";
             this.listViewCarDetails.Size = new System.Drawing.Size(430, 186);
             this.listViewCarDetails.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.listViewCarDetails, "Display all information about the car");
             this.listViewCarDetails.UseCompatibleStateImageBehavior = false;
             // 
             // textBoxResults
@@ -165,38 +212,10 @@ namespace Lab4InventoryForCars
             this.textBoxResults.Size = new System.Drawing.Size(430, 134);
             this.textBoxResults.TabIndex = 7;
             // 
-            // buttonExit
-            // 
-            this.buttonExit.Location = new System.Drawing.Point(358, 503);
-            this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(75, 23);
-            this.buttonExit.TabIndex = 12;
-            this.buttonExit.Text = "E&xit";
-            this.buttonExit.UseVisualStyleBackColor = true;
-            this.buttonExit.Click += new System.EventHandler(this.buttonExitClick);
-            // 
-            // buttonReset
-            // 
-            this.buttonReset.Location = new System.Drawing.Point(277, 503);
-            this.buttonReset.Name = "buttonReset";
-            this.buttonReset.Size = new System.Drawing.Size(75, 23);
-            this.buttonReset.TabIndex = 11;
-            this.buttonReset.Text = "&Reset";
-            this.buttonReset.UseVisualStyleBackColor = true;
-            // 
-            // buttonEnter
-            // 
-            this.buttonEnter.Location = new System.Drawing.Point(196, 503);
-            this.buttonEnter.Name = "buttonEnter";
-            this.buttonEnter.Size = new System.Drawing.Size(75, 23);
-            this.buttonEnter.TabIndex = 10;
-            this.buttonEnter.Text = "&Enter";
-            this.buttonEnter.UseVisualStyleBackColor = true;
-            this.buttonEnter.Click += new System.EventHandler(this.buttonEnterClick);
-            // 
             // numericUpDownYear
             // 
-            this.numericUpDownYear.Location = new System.Drawing.Point(108, 69);
+            this.numericUpDownYear.Location = new System.Drawing.Point(107, 71);
+            this.numericUpDownYear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericUpDownYear.Maximum = new decimal(new int[] {
             2021,
             0,
@@ -209,8 +228,8 @@ namespace Lab4InventoryForCars
             0});
             this.numericUpDownYear.Name = "numericUpDownYear";
             this.numericUpDownYear.ReadOnly = true;
-            this.numericUpDownYear.Size = new System.Drawing.Size(120, 23);
-            this.numericUpDownYear.TabIndex = 5;
+            this.numericUpDownYear.Size = new System.Drawing.Size(121, 23);
+            this.numericUpDownYear.TabIndex = 13;
             this.numericUpDownYear.Value = new decimal(new int[] {
             2021,
             0,
@@ -240,6 +259,7 @@ namespace Lab4InventoryForCars
             this.Controls.Add(this.labelModel);
             this.Controls.Add(this.labelMake);
             this.Name = "FormCarInventory";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Car Inventory";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownYear)).EndInit();
             this.ResumeLayout(false);
